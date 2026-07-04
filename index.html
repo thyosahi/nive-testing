@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Shipping Address</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .panel-heading {
+            background-color: #0c4769 !important;
+            color: white !important;
+        }
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 0 10%;
+        }
+        .step {
+            text-align: center;
+            font-weight: bold;
+            color: #777;
+        }
+        .step.active {
+            color: #0c4769;
+        }
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            line-height: 40px;
+            margin: 0 auto 10px;
+            color: white;
+        }
+        .step.active .step-circle {
+            background-color: #0c4769;
+        }
+        .step.complete .step-circle {
+            background-color: #5cb85c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12 progress-indicator">
+            <div class="step complete">
+                <div class="step-circle"><i class="fa fa-check"></i></div>
+                Step 1<br><small>Order Details</small>
+            </div>
+            <div class="step active">
+                <div class="step-circle">2</div>
+                Step 2<br><small>Shipping & Checkout</small>
+            </div>
+            <div class="step">
+                <div class="step-circle">3</div>
+                Step 3<br><small>Confirmation</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-header">Shipping Address</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-truck"></i> Update your delivery details below</h3>
+                </div>
+                <div class="panel-body">
+                    
+                    <form class="form-horizontal" action="#" method="POST">
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="company_name">Company Name</label>
+                            <div class="col-md-6">
+                                <input id="company_name" name="company_name" placeholder="Company Name (Optional)" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="first_name">First Name *</label>
+                            <div class="col-md-6">
+                                <input id="first_name" name="first_name" placeholder="First Name" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="last_name">Last Name *</label>
+                            <div class="col-md-6">
+                                <input id="last_name" name="last_name" placeholder="Last Name" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="street_address_1">Street Address 1 *</label>
+                            <div class="col-md-6">
+                                <input id="street_address_1" name="street_address_1" placeholder="Street Address 1" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="city">City / Town *</label>
+                            <div class="col-md-6">
+                                <input id="city" name="city" placeholder="City / Town" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="zip">Postal Code *</label>
+                            <div class="col-md-6">
+                                <input id="zip" name="zip" placeholder="Postal Code" class="form-control" required type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="country">Country</label>
+                            <div class="col-md-6">
+                                <select id="country" name="country" class="form-control">
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="phone">Phone *</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    <input id="phone" name="phone" placeholder="Phone Number" class="form-control" required type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email *</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    <input id="email" name="email" placeholder="Email Address" class="form-control" required type="email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-6">
+                                <button id="submit" name="submit" class="btn btn-primary">Save Address & Continue <i class="fa fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="panel-footer text-center text-muted">
+                    <small>Your personal details are held securely and in strict confidence.</small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
